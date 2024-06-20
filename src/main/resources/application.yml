@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev
+  #  datasource:
+  #    url: jdbc:mysql://11.69.161.167:3306/bid_service?useUnicode=true&characterEncoding=UTF-8
+  #    username: root
+  #    password: root
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+server:
+  port: 8001
+
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR

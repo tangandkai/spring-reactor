@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: reactor
+
+swagger:
+  enable: true

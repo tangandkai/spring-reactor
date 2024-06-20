@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--黄金眼 app 线上环境 log 配置-->
+<configuration>
+
+    <property name="LOG_DIR" value="/export/Logs/ge-app.jd.com" />
+    <property name="LOG_MAX_SIZE" value="200MB"/>
+    <property name="MAX_HISTORY" value="10"/>
+    <property name="TOTAL_SIZE_CAP" value="2GB"/>
+
+    <!--
+        service 模块 info级别日志 滚动  设定滚动的触发条件为 triggeringPolicy 指定log文件为100MB，超过这个限制则发生滚动
+        滚动策略由rollingPolicy定义，保存最近10天log，或者总归档日志大于3g，发生删除最久log
+    -->
+    <appender name="service-roll-normal" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+
+    <root level="debug">
+        <appender-ref ref="service-roll-normal"/>
+    </root>
+
+</configuration>
